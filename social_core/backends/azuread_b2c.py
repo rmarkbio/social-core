@@ -140,10 +140,6 @@ class AzureADB2COAuth2(AzureADOAuth2):
             format=serialization.PublicFormat.SubjectPublicKeyInfo
         )
 
-    def get_user_id(self, details, response):
-        """Use subject (sub) claim as unique id."""
-        return response.get('sub')
-
     def get_user_details(self, response):
         """
         Email address is returned on a different attribute for AzureAD
